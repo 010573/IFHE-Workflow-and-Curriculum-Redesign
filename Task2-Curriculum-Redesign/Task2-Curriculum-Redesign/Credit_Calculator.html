@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSE Credit Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
+        input {
+            width: 80px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005a9e;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>B.Tech CSE Credit Calculator</h1>
+
+<p>Enter credits earned in each semester.</p>
+
+Semester 1:
+<input type="number" id="s1"><br>
+
+Semester 2:
+<input type="number" id="s2"><br>
+
+Semester 3:
+<input type="number" id="s3"><br>
+
+Semester 4:
+<input type="number" id="s4"><br>
+
+Semester 5:
+<input type="number" id="s5"><br>
+
+Semester 6:
+<input type="number" id="s6"><br>
+
+Semester 7:
+<input type="number" id="s7"><br>
+
+Semester 8:
+<input type="number" id="s8"><br><br>
+
+<button onclick="calculateCredits()">
+Calculate Total Credits
+</button>
+
+<div id="result"></div>
+
+<script>
+function calculateCredits() {
+    let total = 0;
+
+    for(let i = 1; i <= 8; i++) {
+        total += Number(
+            document.getElementById("s" + i).value
+        ) || 0;
+    }
+
+    document.getElementById("result").innerHTML =
+        "Total Credits: " + total;
+}
+</script>
+
+</body>
+</html>
